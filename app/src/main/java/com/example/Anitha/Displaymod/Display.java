@@ -27,14 +27,13 @@ public class Display extends AppCompatActivity {
 
         Intent intent = getIntent();
         dbregno = intent.getStringExtra("sregno");
-        textregno.setText(dbregno);
 
         disp();
 
     }
 
     private void disp() {
-        Cursor res = myDb.getAllData();
+        Cursor res = myDb.getAllData(dbregno);
         if(res.getCount() == 0) {
             Toast.makeText(Display.this,"Nothing found",Toast.LENGTH_LONG).show();
 
@@ -50,6 +49,7 @@ public class Display extends AppCompatActivity {
 
         }
         textname.setText(dbname);
+        textregno.setText(dbregno);
         textdob.setText(dbdob);
         textdept.setText(dbdept);
 

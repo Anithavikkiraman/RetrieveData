@@ -33,9 +33,9 @@ public class DBHelper extends SQLiteOpenHelper {
     public boolean insertData() {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2, "xyz");
-        contentValues.put(COL_3, "548");
-        contentValues.put(COL_4, "12/34/5678");
+        contentValues.put(COL_2, "keerthi infanta ");
+        contentValues.put(COL_3, "5031");
+        contentValues.put(COL_4, "18....");
         contentValues.put(COL_5, "IT");
 
         long result = db.insert(TABLE_NAME, null, contentValues);
@@ -46,9 +46,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public Cursor getAllData() {
+    public Cursor getAllData(String regno) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COL_3 + "=123",null);
+        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COL_3 + "="+regno,null);
         return res;
     }
     }
